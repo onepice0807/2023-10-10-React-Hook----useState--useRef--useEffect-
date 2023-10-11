@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import "./App.css";
 import Controller from "./components/Controller";
 import Viewer from "./components/Viewer";
+import FiveMultiple from "./components/FiveMultiple";
 
 function App() {
   const [count, setCount] = useState(0); // state hooks 생성
@@ -60,6 +61,9 @@ function App() {
       </section>
       <section>
         <Viewer count={count} />
+        {/* 논리연산자인 경우 */}
+        {count % 5 === 0 && <FiveMultiple />}
+        {/* {count % 5 === 0 ? <FiveMultiple /> : null}  삼항 연산자로 했을경우 */}
       </section>
       <section>
         <Controller handleSetCount={handleSetCount} />
